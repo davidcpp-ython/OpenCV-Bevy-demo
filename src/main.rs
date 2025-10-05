@@ -157,11 +157,13 @@ fn update_camera_feed(
     }
 
     // Get the camera feed sprite's image handle
-    if let Ok(sprite) = q_feed.get_single() {
+    if let Ok(sprite) = q_feed.single() {
         if let Some(image) = images.get_mut(&sprite.image) {
             // Copy OpenCV frame data to Bevy image
             if let Ok(data) = frame_rgba.data_bytes() {
-                image.data.copy_from_slice(data);
+                if let Some(image_data) = &mut image.data {
+                    image_data.copy_from_slice(data);
+                }
             }
         }
     }
