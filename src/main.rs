@@ -1,13 +1,3 @@
-//! # Bevy + OpenCV Real-time Camera Integration
-//!
-//! Demonstrates spawning Bevy sprites based on OpenCV corner detection from a live camera feed.
-//!
-//! ## Key Components
-//! - [`CvCamera`] - OpenCV camera capture resource
-//! - [`CornerDot`] - Marker component for spawned corner sprites
-//! - [`setup`] - Initializes Bevy 2D camera and OpenCV camera
-//! - [`detect_and_spawn_corners`] - Detects corners and spawns sprites in real-time
-
 use anyhow::{Context, Result};
 use bevy::prelude::*;
 use opencv::{
