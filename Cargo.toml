@@ -1,0 +1,9 @@
+[package]
+name = "bevy-opencv-test"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = "0.16"
+opencv = { version = "0.96", default-features = false, features = ["videoio", "imgproc", "clang-runtime"] }
+anyhow = "1.0"
