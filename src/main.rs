@@ -8,7 +8,6 @@ use opencv::{
 };
 
 /// OpenCV camera resource for frame capture
-///
 /// SAFETY: VideoCapture contains raw pointers and is not Send/Sync by default.
 /// We mark it as such because we only access it from the main thread in Bevy systems.
 struct CvCamera {
